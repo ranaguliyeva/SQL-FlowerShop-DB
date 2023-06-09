@@ -1,0 +1,10 @@
+--DDL
+drop table countries1;
+
+create table countries1(
+name varchar(20),
+capital varchar(20),
+citizens number);
+
+alter table countries add constraint countries1_pk primary key(name);
+alter table countries add constraint citizens_chck check(citizens between 500000 and 1000000);
