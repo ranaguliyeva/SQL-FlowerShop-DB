@@ -25,4 +25,25 @@ commit;
 
 update countries1 set capital='Ankara' where name='Turkey';
 delete from countries1 where name='Azerbaijan' and citizens=11000000;
+
+--Select statement. Queries
 select * from countries1;
+
+select * from countries1
+where name like '%ia';
+
+select * from countries1
+where citizens > 10000000
+order by citizens desc;
+
+select name, citizens
+from countries1
+order by citizens desc
+fetch next 3 rows only;
+
+select avg(citizens) as average_population
+from countries1;
+
+select capital from countries1
+group by capital
+having avg(citizens) < 10000000;
