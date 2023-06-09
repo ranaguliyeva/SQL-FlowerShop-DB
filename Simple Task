@@ -8,3 +8,21 @@ citizens number);
 
 alter table countries add constraint countries1_pk primary key(name);
 alter table countries add constraint citizens_chck check(citizens between 500000 and 1000000);
+
+--DML
+insert into countries1 (name, capital, citizens) values ('Azerbaijan', 'Baku', 10000000);
+commit;
+insert into countries1 (name, capital, citizens) values ('Russia', 'Moscow', 140000000);
+commit;
+insert into countries1 (name, capital, citizens) values ('Lithuania', 'Vilnius', 3000000);
+commit;
+insert into countries1 (name, capital, citizens) values ('Turkey', 'Istanbul', 83000000);
+commit;
+insert into countries1 (name, capital, citizens) values ('Japan', 'Tokyo', 126000000);
+commit;
+insert into countries1(name, capital, citizens) values ('Azerbaijan', 'Baku', 11000000);
+commit;
+
+update countries1 set capital='Ankara' where name='Turkey';
+delete from countries1 where name='Azerbaijan' and citizens=11000000;
+select * from countries1;
