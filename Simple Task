@@ -61,6 +61,12 @@ intersect
 select employee_id, first_name from employees
 order by first_name desc;
 
+select first_name, employee_id from employees
+where department_id=10
+minus
+select first_name, employee_id from employees
+where last_name like 'a%';
+
 --Join
 select e.first_name, e.last_name, j.job_title
 from employees e
