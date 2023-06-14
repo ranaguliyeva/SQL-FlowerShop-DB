@@ -47,3 +47,15 @@ from countries1;
 select capital from countries1
 group by capital
 having avg(citizens) < 10000000;
+
+--SET operators
+select employee_id, job_id from employees
+where first_name LIKE '%a%'
+union 
+select employee_id, job_id from employees
+where salary >=1000;
+
+select employee_id, first_name from employees
+where email like '%i%'
+intersect
+select employee_id, first_name from employees;
