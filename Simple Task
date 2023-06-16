@@ -137,3 +137,18 @@ right join job_history j on d.department_id=j.department_id;
 
 select * from employees e
 full join departments d on e.department_id=d.department_id;
+
+--joins 1st part
+
+select e.salary, jh.start_date from employees e
+join job_history jh on e.job_id=jh.job_id;
+
+select e.employee_id as emp_id, m.employee_id as mngr_id
+from employees e
+join employees m on e.employee_id=m.manager_id; 
+
+select * from employees
+natural join departments;
+
+select e.first_name, e.job_id, d.department_name from employees e
+join departments d using(department_id);
